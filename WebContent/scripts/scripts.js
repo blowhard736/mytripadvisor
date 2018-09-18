@@ -61,5 +61,5 @@ function createListItem(data) {
 		var url = 'detail.html?id=' + data.id;
 		window.location = url;
 	});
-	/*return $tmpl;*/
+	return $tmpl;
 }
