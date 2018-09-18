@@ -1,3 +1,7 @@
+.form-box .inner {
+	padding: 60px 70px;
+}
+
 
 /* -------------------±Ë¡§»÷(detail)°È------------------- */
 
@@ -283,7 +287,7 @@ button:hover{
 	background-color: #fff;
 	overflow: auto;
 }
-<<<<<<< HEAD
+
 
 
  /* øÏ∂˜ css¿€º∫ ≥° */
@@ -292,9 +296,6 @@ button:hover{
 
  
 /*  ¡æ∑˚ »∏ø¯∞°¿‘ */
-.form-box .inner {
-	padding: 60px 70px;
-}
 
 #form-register {
 	font-size: 15px;
