@@ -79,8 +79,8 @@ function showMarker(lat,lng) {
 
 
 //등록버튼을 클릭해 추가
-$('.btn-register').click(function() {
-	var myTrips  = Cookies.getJSON('MYTRIPS');
+function register() {
+var myTrips  = Cookies.getJSON('MYTRIPS');
 	
 	//존재하지 않을 경우 빈 배열로 초기화
 	if(!myTrips){
@@ -99,4 +99,5 @@ $('.btn-register').click(function() {
 	Cookies.set('MYTRIPS',myTrips);
 	
 	alert('여행지가 등록되었습니다!');
-});
+}
+
