@@ -28,13 +28,13 @@ function getDetail(id) {
 	$.getJSON(url,{
 		id:id
 	}, function(r) {
-		console.log(r); //api로 반환된 결과 확인
-		//데이터 화면에 표시
+		console.log(r); // api로 반환된 결과 확인
+		// 데이터 화면에 표시
 		$('.detail-header-name').html(r.name);
 		$('.detail-header-city-name').html(r.cityName);
 		$('.detail-desc-text').html(r.desc);
 		
-		//갤러리아
+		// 갤러리아
 		var $gallery = $('#detail-images');
 		var images = r.subImageList;
 		for (var i=0; i<images.length; i++){
@@ -45,12 +45,11 @@ function getDetail(id) {
 		Galleria.run('#detail-images');
 		
 		showMarker(r.position.x,r.position.y);
+		register(id,r);
 	});
 }
 
-/*지도표시*/
-
-
+/* 지도표시 */
 
 function showMap() {
 	map = new google.maps.Map(document.getElementById('map'),{
@@ -62,7 +61,7 @@ function showMap() {
 	});
 }
 
-/*지도에 마커표시*/
+/* 지도에 마커표시 */
 function showMarker(lat,lng) {
 	var pos = {
 			lat:lat,
@@ -78,16 +77,19 @@ function showMarker(lat,lng) {
 }
 
 
-//등록버튼을 클릭해 추가
-function register() {
-var myTrips  = Cookies.getJSON('MYTRIPS');
+
+function register(id,r) {
+	$('.btn-register').click(function() {
+		
+	var myTrips  = Cookies.getJSON('MYTRIPS');
+
 	
-	//존재하지 않을 경우 빈 배열로 초기화
+	// 존재하지 않을 경우 빈 배열로 초기화
 	if(!myTrips){
 		myTrips=[];
 	}
 	
-	//여행지를 myTrips에 추가
+	// 여행지를 myTrips에 추가
 	myTrips.push({
 		id: id,
 		name: r.name,
@@ -99,5 +101,8 @@ var myTrips  = Cookies.getJSON('MYTRIPS');
 	Cookies.set('MYTRIPS',myTrips);
 	
 	alert('여행지가 등록되었습니다!');
+
+});
+
 }
 

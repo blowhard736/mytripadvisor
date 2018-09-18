@@ -40,6 +40,7 @@ function submit(id, password){
 		id: id,
 		password: password,
 	};
+	
 	$.post('some-server-url', params, function(r){
 		console.log(r);
 	});
