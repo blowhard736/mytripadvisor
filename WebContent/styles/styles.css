@@ -298,6 +298,7 @@ button:hover{
 
 #form-register {
 	font-size: 15px;
+	text-align: center;
 }
 
 #inp-password {
@@ -588,8 +589,4 @@ button:hover{
 
 #form-login{
 	text-align: center;
-}
-
-div.inner{
-	
 }
