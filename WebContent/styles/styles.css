@@ -108,7 +108,7 @@ button:hover{
 	cursor: pointer;
 }
 .blue{
-	color: #4299e1;
+	color: #4299E1;
 }
 .black{
 	color: #000;
@@ -283,6 +283,8 @@ button:hover{
 	background-color: #fff;
 	overflow: auto;
 }
+
+
  /* 우람 css작성 끝 */
  
  
