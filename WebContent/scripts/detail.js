@@ -1,8 +1,11 @@
+var map;
 
 $(function() {
 	var id = parseId(window.location.search);
 	console.log('id',id); //id를 제대로 받아왔는지 확인
 	getDetail(id);
+	showMap();
+
 });
 
 function getDetail(id) {
@@ -28,6 +31,7 @@ function getDetail(id) {
 		Galleria.run('#detail-images');
 		
 		showMarker(r.position.x,r.position.y);
+		register(id,r);
 	});
 }
 
@@ -47,14 +51,6 @@ function parseId(str) {
 }
 
 /*지도표시*/
-
-var map;
-
-$(function() {
-	var id=parseId(window.location.search);
-	getDetail(id);
-	showMap();
-});
 
 function showMap() {
 	map = new google.maps.Map(document.getElementById('map'),{
@@ -87,10 +83,13 @@ var list = [1,2,3,4,5];
 //stringify하기
 document.cookie='list='+JSON.stringify(list);
 //인자의 형태를 보고 js-cookie가 알아서 처리
-Cookie.set('list',list);
+/*Cookie.set('list',list);*/
 
 //등록버튼을 클릭해 추가
-$('.btn-register').click(function() {
+
+function register(id,r) {
+	$('.btn-register').click(function() {
+		
 	var myTrips  = Cookies.getJSON('MYTRIPS');
 	
 	//존재하지 않을 경우 빈 배열로 초기화
@@ -111,3 +110,6 @@ $('.btn-register').click(function() {
 	
 	alert('여행지가 등록되었습니다!');
 });
+
+}
+
