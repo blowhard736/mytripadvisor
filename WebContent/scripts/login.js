@@ -1,4 +1,5 @@
 $(function(){
+	
 	$('#form-login').submit(function(e){
 		e.preventDefault();
 		
@@ -28,8 +29,9 @@ function validateId(id){
 	return re.test(id);
 }
 
+/*(?=.*\d) 이 부분이 빠져있었습니다.*/
 function validatePassword(password){
-	var re = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/;
+	var re = /^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/;
 	return re.test(password);
 }
 
