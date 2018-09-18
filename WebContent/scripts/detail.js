@@ -6,7 +6,7 @@ $(function() {
 });
 
 function getDetail(id) {
-	var url = 'http://javascript-basic.appspot.com/locationDetail';
+	var url = 'https://javascript-basic.appspot.com/locationDetail';
 	
 	$.getJSON(url,{
 		id:id
