@@ -6,6 +6,22 @@ $(function() {
 	showMap();
 });
 
+function parseId(str) {
+	var s = str.substring(1);
+	var args = s.split('&');
+	
+	for ( var i = 0; i<args.length; i++){
+		var arg = args[i];
+		var tokens = arg.split('=');
+		
+		if(tokens[0]==='id'){
+			return tokens[1];
+		}
+	}
+	return null;
+}
+
+
 function getDetail(id) {
 	var url = 'https://javascript-basic.appspot.com/locationDetail';
 	
@@ -30,21 +46,6 @@ function getDetail(id) {
 		
 		showMarker(r.position.x,r.position.y);
 	});
-}
-
-function parseId(str) {
-	var s = str.substring(1);
-	var args = s.split('&');
-	
-	for ( var i = 0; i<args.length; i++){
-		var arg = args[i];
-		var tokens = arg.split('=');
-		
-		if(tokens[0]==='id'){
-			return tokens[1];
-		}
-	}
-	return null;
 }
 
 /*지도표시*/
