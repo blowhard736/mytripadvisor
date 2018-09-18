@@ -81,7 +81,7 @@
 
 /*  -------------------김정휘(detail)↑------------------- */
 
-/* 우람 css 작성 시작 */
+/* -------------------박우람(detail)↓------------------- */
 
 @font-face{
 	font-family: 'Heebo';
@@ -283,10 +283,13 @@ button:hover{
 	background-color: #fff;
 	overflow: auto;
 }
+<<<<<<< HEAD
 
 
  /* 우람 css작성 끝 */
- 
+
+ /* -------------------박우람(detail)↑------------------- */
+
  
 /*  종륜 회원가입 */
 .form-box .inner {
@@ -583,3 +586,10 @@ button:hover{
 	vertical-align: middle;
 }
 
+#form-login{
+	text-align: center;
+}
+
+div.inner{
+	
+}

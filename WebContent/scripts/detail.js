@@ -1,8 +1,9 @@
+var map;
 
 $(function() {
-	var id = parseId(window.location.search);
-	console.log('id',id); //id를 제대로 받아왔는지 확인
+	var id=parseId(window.location.search);
 	getDetail(id);
+	showMap();
 });
 
 function getDetail(id) {
@@ -11,7 +12,7 @@ function getDetail(id) {
 	$.getJSON(url,{
 		id:id
 	}, function(r) {
-		console.log(r) //api로 반환된 결과 확인
+		console.log(r); //api로 반환된 결과 확인
 		//데이터 화면에 표시
 		$('.detail-header-name').html(r.name);
 		$('.detail-header-city-name').html(r.cityName);
@@ -48,13 +49,7 @@ function parseId(str) {
 
 /*지도표시*/
 
-var map;
 
-$(function() {
-	var id=parseId(window.location.search);
-	getDetail(id);
-	showMap();
-});
 
 function showMap() {
 	map = new google.maps.Map(document.getElementById('map'),{
@@ -81,13 +76,6 @@ function showMarker(lat,lng) {
 	map.panTo(pos);
 }
 
-/*쿠키에 데이터 저장*/
-var list = [1,2,3,4,5];
-
-//stringify하기
-document.cookie='list='+JSON.stringify(list);
-//인자의 형태를 보고 js-cookie가 알아서 처리
-Cookie.set('list',list);
 
 //등록버튼을 클릭해 추가
 $('.btn-register').click(function() {
