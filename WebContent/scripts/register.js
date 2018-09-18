@@ -59,10 +59,16 @@ function generateYears($select) {
 	}
 }
 
-/*(2) 이메일 주소 체크 이메일 값을 가져와 유효성 체크를 한다.*/
+/*(2) 이메일 주소 체크 (이메일 값을 가져와 유효성 체크를 한다.)*/
 function validateEmail(email) {
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
+}
+
+/*비밀번호 체크(비밀번호 값을 가져와 유효성 체크를 한다)*/
+function validatePassword(password) {
+	var re = /^(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/;
+	return re.test(password);
 }
 
 function submit(email, password, gender, birth) {
